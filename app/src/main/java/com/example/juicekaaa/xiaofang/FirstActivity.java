@@ -3,12 +3,13 @@ package com.example.juicekaaa.xiaofang;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
+
+import com.youth.banner.Banner;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,8 +27,11 @@ import butterknife.ButterKnife;
 public class FirstActivity extends AppCompatActivity {
     @BindView(R.id.gridview)
     GridView gridview;
+    @BindView(R.id.banner1)
+    Banner banner1;
     private List<Map<String, Object>> dataList;
     private SimpleAdapter adapter;
+    private List<Integer> bannerList = new ArrayList();
 
 
     final int img[] = new int[]{R.drawable.wz, R.drawable.opendoor, R.drawable.qd,
@@ -71,6 +75,14 @@ public class FirstActivity extends AppCompatActivity {
             map.put("text", text[i]);
             dataList.add(map);
         }
+
+        bannerList = new ArrayList<>();
+        bannerList.add(R.drawable.banner_1);
+        bannerList.add(R.drawable.banner_2);
+        bannerList.add(R.drawable.banner_3);
+        bannerList.add(R.drawable.banner_4);
+        //加载图片
+        banner1.setImages(bannerList).setImageLoader(new GlideImageLoader()).start();
 
     }
 }
