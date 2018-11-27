@@ -16,7 +16,7 @@ import java.util.Set;
 public class UdpSendThread extends Thread {
     public static final String TAG = "UdpSendThread";
     private static int i = 0; //静态变量，记录发送消息的次数
-    private static final int PORT = 12342;
+        private static final int PORT = 12342;
     private static String msg = "";
 
     public UdpSendThread(String msg) {
@@ -38,7 +38,7 @@ public class UdpSendThread extends Thread {
             Log.d(TAG, "*** run udp send ***");
             DatagramSocket socket = new DatagramSocket(22223); //自定端口号
             InetAddress address = InetAddress.getByName(broadIp); //通过当前 IP 建立相应的 InetAddress
-//            String data = "I love you" + "( " + i++ + " )";
+            System.out.println("address"+address);
             byte dataByte[] = msg.getBytes(); //建立数据
             DatagramPacket packet = new DatagramPacket(dataByte, dataByte.length, address, PORT); //通过该数据建包
             socket.send(packet); //开始发送该包

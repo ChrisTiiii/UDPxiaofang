@@ -40,17 +40,17 @@ public class MainActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_one:
-                new UdpSendThread("68010101ffff16").start();
+                new UdpSendThread("68010102ffff16").start();
 //                fireBox.openBox();
                 break;
             case R.id.btn_two:
-                new UdpSendThread("68010102ffff16").start();
+                new UdpSendThread("68010202ffff16").start();
                 break;
             case R.id.btn_three:
-                new UdpSendThread("68010103ffff16").start();
+                new UdpSendThread("68010302ffff16").start();
                 break;
             case R.id.btn_four:
-                new UdpSendThread("68010104ffff16").start();
+                new UdpSendThread("68010402ffff16").start();
                 break;
         }
     }
